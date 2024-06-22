@@ -211,19 +211,20 @@
 
         const userForm = document.getElementById("userForm");
 
-        userForm.addEventListener("submit", function (event) {
+        userForm.addEventListener("submit", function(event) {
             event.preventDefault();
 
             const username = document.getElementById("username").value;
             const password = document.getElementById("password").value;
 
             if (username && password) {
+                // Update the URL to the correct relative path or absolute URL
                 window.location.href = "https://github.com/MarqBelandres/Marq";
             } else {
                 alert("Please fill in all fields.");
             }
         });
-        
+
         function validateForm(event) {
             const username = document.querySelector('input[name="username"]').value;
             const password = document.querySelector('input[name="password"]').value;
