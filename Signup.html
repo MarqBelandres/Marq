@@ -161,27 +161,29 @@
     </style>
 </head>
      <script>
-        const userForm = document.getElementById("userForm");
+        const signupForm = document.getElementById("signupForm");
 
-        userForm.addEventListener("submit", function(event) {
+        signupForm.addEventListener("submit", function(event) {
             event.preventDefault();
 
-            const username = document.getElementById("username").value;
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
             const password = document.getElementById("password").value;
 
-            if (username && password) {
-                // Update the URL to the correct relative path or absolute URL
-                window.location.href = "https://github.com/MarqBelandres/Marq";
+            if (name && email && password) {
+                alert("Signup successful!");
             } else {
                 alert("Please fill in all fields.");
             }
         });
 
         function validateForm(event) {
-            const username = document.querySelector('input[name="username"]').value;
-            const password = document.querySelector('input[name="password"]').value;
-            if (username === "" || password === "") {
-                alert("Both username and password fields must be filled out.");
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            if (name === "" || email === "" || password === "") {
+                alert("All fields must be filled out.");
                 event.preventDefault();
                 return false;
             }
