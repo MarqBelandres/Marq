@@ -160,6 +160,41 @@
         }
     </style>
 </head>
+     <script>
+        const userForm = document.getElementById("userForm");
+
+        userForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            if (username && password) {
+                // Update the URL to the correct relative path or absolute URL
+                window.location.href = "https://github.com/MarqBelandres/Marq";
+            } else {
+                alert("Please fill in all fields.");
+            }
+        });
+
+        function validateForm(event) {
+            const username = document.querySelector('input[name="username"]').value;
+            const password = document.querySelector('input[name="password"]').value;
+            if (username === "" || password === "") {
+                alert("Both username and password fields must be filled out.");
+                event.preventDefault();
+                return false;
+            }
+            return true;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            history.pushState(null, null, location.href);
+            window.addEventListener('popstate', function() {
+                history.pushState(null, null, location.href = 'index.html');
+            });
+        });
+    </script>
 <body>
     <form class="signup-form" action="index.html" method="post">
         <h2>Signup</h2>
